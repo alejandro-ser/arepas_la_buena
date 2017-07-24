@@ -10,15 +10,17 @@
 
 body {
   background: #78a7be;
+  background-image: url('../img/maiz.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .contenedor-menu {
   width: 1000px;
-  height: 680px;
+  height: 640px;
   display: flex;
-  padding: 5px;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   perspective: 1500px;
 }
 
@@ -53,20 +55,22 @@ body {
 .lista-tres {
   width: 100%;
   text-align: center;
+  margin-top: 18px;
 }
 
 .lista-uno h1,
 .lista-dos h1,
 .lista-tres h1 {
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
+  line-height: 25px;
 }
 
 .lista-uno img,
 .lista-dos img,
 .lista-tres img {
   width: 100px;
-  height: 80px;
+  height: 70px;
 }
 
 .lista-uno p,
@@ -79,7 +83,7 @@ body {
 .lista-uno hr,
 .lista-dos hr,
 .lista-tres hr {
-  width: 100px;
+  width: 150px;
   height: 3px;
   margin: auto;
   border-style: none;
@@ -94,6 +98,11 @@ body {
   transition: all 1s;
   transform-origin: right;
   transform-style: preserve-3d;
+  z-index: 10;
+}
+
+.pagina-izquierda2 {
+  transform: rotateY(0deg);
 }
 
 .lado {
@@ -104,12 +113,18 @@ body {
   transform: rotateY(180deg);
   width: 100%;
   height: 100%;
+  background: white;
   text-align: center;
+  position: absolute;
+  top: 0;
+  left: -1px;
 }
 
 .delante img {
   width: 250px;
   margin: auto;
+  margin-top: 30px;
+  border-radius: 10%;
 }
 
 .delante h1 {
@@ -122,6 +137,103 @@ body {
   height: 3px;
   border-style: none;
   margin: auto;
-  background: -webkit-linear-gradient(left, #f4e48a, #212120, red);
+  background: -webkit-linear-gradient(left, #f4e48a, #212120, #fa4632);
   margin-top: 10px;
+}
+
+.delante hr {
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+.delante button {
+  width: 200px;
+  padding: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  background: orange;
+  border-style: none;
+  border-radius: 8px;
+  color: white;
+  margin-top: 10px;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+.delante button:hover {
+  transform: translateY(8px);
+  box-shadow: 0px -5px 10px 0px #969696;
+}
+
+.delante h4 {
+  margin-top: 10px
+}
+
+.delante p {
+  margin-top: 10px
+}
+
+.delante ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.delante ul h5 {
+  font-size: 16px;
+}
+
+.delante ul label {
+  font-size: 14px;
+  margin-top: 4px;
+  margin-left: 10px;
+}
+
+/* Pagina derecha animación */
+
+.pagina-derecha {
+  transform: rotateY(-180deg);
+  transform-origin: left;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
+.pagina-derecha2 {
+  transform: rotateY(0deg);
+}
+
+.lado-pagina-derecha {
+  backface-visibility: hidden;
+
+}
+
+.pagina-derecha-atras {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  border: 6px double #3f3f3f;
+  border-right: none;
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: -18px;
+  right: -22px;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 2.8;
+  filter: blur(1px);
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+.btn-cerrar:hover {
+  filter: blur(0px);
 }
